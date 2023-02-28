@@ -80,10 +80,16 @@ public class Main {
         HashSet<ArrayList<Integer>> tempSubSet2 = getSets(nums2);  // подмассивов каждого входного массива
         tempSubSet2.retainAll(tempSubSet1); // находим одинаковые подмассивы пересечением множеств
         int max = 0;
-        for (ArrayList<Integer> item : tempSubSet2) { // самый большой размер подмассива
-            if (max < item.size()) {
+        ArrayList<ArrayList<Integer>> maxSubArrays = new ArrayList<>();
+        for (ArrayList<Integer> item : tempSubSet2) { // определяем самый большой размер подмассива
+        if (max < item.size()) {
                 max = item.size();
-            }
+                maxSubArrays = new ArrayList<>();
+                maxSubArrays.add(item);
+        }
+        else if(max == item.size()){
+            maxSubArrays.add(item);
+        }       
         }
 
         if (max == 0) {// выходим если нет повторяющихся подмассивов
@@ -91,12 +97,6 @@ public class Main {
             return;
         }
         System.out.printf("Максимальный размер общего подмассива: %d\n", max);
-        ArrayList<ArrayList<Integer>> maxSubArrays = new ArrayList<>();
-        for (ArrayList<Integer> item : tempSubSet2) { // сохраняем найденные подмассивы с список
-            if (max == item.size()) {
-                maxSubArrays.add(item);
-            }
-        }
         if (maxSubArrays.size() > 1) {
             System.out.print("Подмассивы с максимальным размером: ");
         } else {
