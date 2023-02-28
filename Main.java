@@ -105,6 +105,7 @@ public class Main {
         for (ArrayList<Integer> i : maxSubArrays) {
             System.out.print(i + " ");
         }
+        System.out.println();
     }
 
 }
