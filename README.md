@@ -17,4 +17,4 @@ Explanation: Повторяющийся подмассив с максималь
 
 ## More examples:
 
-[!Examples](examples.jpg)
+[!Examples](https://github.com/VeraNik1/java_home_work5/blob/main/examples.jpg)
